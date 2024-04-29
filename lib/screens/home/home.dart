@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Consumer<AuthModel>(
-        builder: (context, value, child) => DefaultTabController(
+        builder: (context, provider, _) => DefaultTabController(
               length: 3,
               child: Scaffold(
                 appBar: AppBar(
@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
                 ),
                 body: TabBarView(
                   children: [
-                    Profile(username: value.username,),
+                    Profile(username: provider.username,),
                    Albums(),
                     Posts(),
                   ],
