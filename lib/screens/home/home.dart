@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iw_assignment_flutter_venusha/model/authModel.dart';
+import 'package:iw_assignment_flutter_venusha/screens/albums/albums.dart';
 import 'package:iw_assignment_flutter_venusha/screens/posts/posts.dart';
 import 'package:iw_assignment_flutter_venusha/screens/profile/profile.dart';
 import 'package:iw_assignment_flutter_venusha/styles/AppStyles.dart';
@@ -32,7 +33,7 @@ class _HomeState extends State<Home> {
                 body: TabBarView(
                   children: [
                     Profile(username: value.username,),
-                    Icon(Icons.directions_transit),
+                   Albums(),
                     Posts(),
                   ],
                 ),

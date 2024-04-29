@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:iw_assignment_flutter_venusha/model/authModel.dart';
+import 'package:iw_assignment_flutter_venusha/screens/albumView/albumView.dart';
 import 'package:iw_assignment_flutter_venusha/screens/home/home.dart';
 
 import 'package:iw_assignment_flutter_venusha/screens/login/login.dart';

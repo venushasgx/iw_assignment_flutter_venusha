@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:iw_assignment_flutter_venusha/screens/albumView/albumView.dart';
 import 'package:iw_assignment_flutter_venusha/screens/postView/postView.dart';
-import 'package:iw_assignment_flutter_venusha/screens/posts/posts.dart';
 
-class PostItem extends StatefulWidget {
+class AlbumItem extends StatefulWidget {
   String title = "";
   String description = "";
-  int postId = 0;
+  int albumId = 0;
 
-  PostItem(
-      {super.key, this.title = "", this.description = "", this.postId = 0});
+  AlbumItem(
+      {super.key, this.title = "", this.description = "", this.albumId = 0});
 
   @override
-  State<PostItem> createState() => _PostItemState();
+  State<AlbumItem> createState() => _AlbumItemState();
 }
 
-class _PostItemState extends State<PostItem> {
+class _AlbumItemState extends State<AlbumItem> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,12 +28,11 @@ class _PostItemState extends State<PostItem> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => PostView(
-                            title: widget.title,
-                            body: widget.description,
+                      builder: (context) => AlbumView(
+                            albumId: widget.albumId,
                           )));
             },
-            child: Text("Read More")),
+            child: Text("View Photos")),
         Divider()
       ],
     );

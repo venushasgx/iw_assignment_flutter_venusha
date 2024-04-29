@@ -20,7 +20,9 @@ class CustomButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 15.0),
         backgroundColor: AppStyles.primaryColor, // Button color
         foregroundColor: Colors.black,
-        textStyle: TextStyle(fontSize: 16.0, ), // Text style
+        textStyle: TextStyle(
+          fontSize: 16.0,
+        ), // Text style
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0), // Button border radius
         ),

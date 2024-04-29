@@ -14,10 +14,13 @@ class PostView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(title),
-          ), Text(body)],
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Text(title),
+            ),
+            Text(body)
+          ],
         ),
       ),
     );

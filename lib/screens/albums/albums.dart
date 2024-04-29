@@ -2,35 +2,35 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:iw_assignment_flutter_venusha/widgets/AlbumItem.dart';
 import 'package:iw_assignment_flutter_venusha/widgets/PostItem.dart';
 
-class Posts extends StatefulWidget {
-  const Posts({super.key});
+class Albums extends StatefulWidget {
+  const Albums({super.key});
 
   @override
-  State<Posts> createState() => _PostsState();
+  State<Albums> createState() => _AlbumsState();
 }
 
-class _PostsState extends State<Posts> {
-  List<dynamic> posts = [];
+class _AlbumsState extends State<Albums> {
+  List<dynamic> albums = [];
 
   @override
   void initState() {
     super.initState();
-    getPosts();
+    getAlbums();
   }
 
-  Future<void> getPosts() async {
+  Future<void> getAlbums() async {
+    
     String enpoint = "https://jsonplaceholder.typicode.com/posts";
 
     try {
       http.Response res = await http.get(Uri.parse(enpoint));
       if (res.statusCode == 200) {
-    
         setState(() {
-          posts = json.decode(res.body);
+          albums = json.decode(res.body);
         });
-  
       } else {
         print(res.statusCode);
       }
@@ -40,16 +40,19 @@ class _PostsState extends State<Posts> {
   }
 
   @override
+  @override
   Widget build(BuildContext context) {
     return Container(
-      child: posts.isEmpty
+      child: albums.isEmpty
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(
-              itemCount: posts.length,
+              itemCount: albums.length,
               itemBuilder: (BuildContext context, index) {
-                return PostItem(
-                    title: posts[index]['title'],
-                    description: posts[index]['body']);
+                return AlbumItem(
+                  title: albums[index]['title'],
+                  description: albums[index]['body'],
+                  albumId: albums[index]['id'],
+                );
               },
             ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//state for store user
 class AuthModel extends ChangeNotifier {
   String _username = "";
 
